@@ -133,6 +133,8 @@ footer a:hover {
 
 .slide img {
   width: 100%;
+  height: 400px; /* Altezza fissa */
+  object-fit: cover; /* Ritaglia l'immagine mantenendo il contenuto centrato */
   border-radius: 10px;
 }
 
