@@ -67,10 +67,9 @@ ul {
 }
 
 table {
-  width: 50%;
-  max-width: 600px;
+  width: 75%; /* Puoi cambiare questo valore per ridurre la larghezza */
   border-collapse: collapse;
-  margin-top: 30px;
+  margin: 30px auto; /* Questo centra la tabella orizzontalmente */
   background-color: #11212f;
   color: #e0f7ff;
 }
