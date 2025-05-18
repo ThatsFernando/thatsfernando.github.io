@@ -352,5 +352,51 @@
   <footer>
     <p>Fonti: <a href="https://it.wikipedia.org/wiki/Terremoto_e_maremoto_dell%27Oceano_Indiano_del_2004" target="_blank">Wikipedia</a></p>
   </footer>
+
+<script>
+  let slideIndex = 0;
+  let slides = document.getElementsByClassName("slide");
+  let timer;
+
+  function showSlide(index) {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[index].style.display = "block";
+  }
+
+  function nextSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  function prevSlide() {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+  }
+
+  function startSlideshow() {
+    showSlide(slideIndex);
+    timer = setInterval(nextSlide, 3000);
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    startSlideshow();
+  }
+
+  document.querySelector(".next").addEventListener("click", function () {
+    nextSlide();
+    resetTimer();
+  });
+
+  document.querySelector(".prev").addEventListener("click", function () {
+    prevSlide();
+    resetTimer();
+  });
+
+  window.onload = startSlideshow;
+</script>
+  
 </body>
 </html>
